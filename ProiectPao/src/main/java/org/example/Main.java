@@ -1,6 +1,8 @@
 package org.example;
 
 import java.util.Scanner;
+
+import servicii.ServiceAngajati;
 import servicii.ServiceBiblioteca;
 import servicii.ServiceCarte;
 
@@ -9,13 +11,16 @@ public class Main {
 
         ServiceBiblioteca biblSer = new ServiceBiblioteca();
         ServiceCarte carteSer = new ServiceCarte();
+        ServiceAngajati angajatSer = new ServiceAngajati();
         Scanner scanner = new Scanner(System.in);
+
 
         while (true) {
             System.out.println("---------------------------------------------------");
             System.out.println("Meniu Principal");
             System.out.println("1. Gestionare Biblioteci");
             System.out.println("2. Gestionare Cărți");
+            System.out.println("3. Gestionare Angajati");
             System.out.println("0. Ieșire");
             System.out.print("Alegeți opțiunea: ");
             int option = Integer.parseInt(scanner.nextLine());
@@ -26,6 +31,9 @@ public class Main {
                     break;
                 case 2:
                     carteSer.meniuCarte();
+                    break;
+                case 3:
+                    angajatSer.meniuAngajati();
                     break;
                 case 0:
                     System.out.println("La revedere!");

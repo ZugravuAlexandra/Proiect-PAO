@@ -156,7 +156,7 @@ public class ServiceCarte {
         for(Carte carte : carti) {
             if(carte.getId() == id)
             {
-                afisareCarte();
+                System.out.println(carte);
                 carteGasita = true;
                 break;
             }
