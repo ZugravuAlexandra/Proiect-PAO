@@ -17,6 +17,11 @@ public abstract class Utilizator {
         this.telefon = telefon;
     }
 
+    public Utilizator(int id, String nume) {
+        this.id = id;
+        this.nume = nume;
+    }
+
     public int getId() {
         return id;
     }

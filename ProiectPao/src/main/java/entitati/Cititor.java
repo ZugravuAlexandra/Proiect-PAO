@@ -1,8 +1,13 @@
 package entitati;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class Cititor extends Utilizator{
     private boolean elev;
     // sa fac si un istoric de imprumuturi
+
+    private List<Imprumut> imprumuturi = new ArrayList<>();
 
     public Cititor () {}
 
@@ -11,6 +16,13 @@ public class Cititor extends Utilizator{
         this.elev = elev;
     }
 
+    public Cititor(int id, String nume) {
+        super(id, nume);
+    }
+
+    public void removeImprumut(Imprumut imprumut) {
+        imprumuturi.remove(imprumut);
+    }
     public boolean isElev() {
         return elev;
     }
@@ -27,4 +39,13 @@ public class Cititor extends Utilizator{
                 " prenume = " + getPrenume() + "\n" +
                 " elev = " + elev;
     }
+
+    public List<Imprumut> getImprumuturi() {
+        return imprumuturi;
+    }
+
+    public void addImprumut(Imprumut imprumut) {
+        imprumuturi.add(imprumut);
+    }
+
 }

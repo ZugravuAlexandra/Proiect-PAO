@@ -11,7 +11,7 @@ public class Carte {
     // private String gen (sectiunea din care face parte)
     private String descriere;
     private List<Recenzii> recenzii;
-
+    private boolean disponibila;
 
 
     Carte() {}
@@ -98,5 +98,9 @@ public class Carte {
         }
 
         return result;
+    }
+
+    public void setDisponibila(boolean disponibila) {
+        this.disponibila = disponibila;
     }
 }

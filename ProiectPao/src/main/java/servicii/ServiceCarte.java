@@ -13,6 +13,7 @@ public class ServiceCarte {
     private List<Carte> carti = new ArrayList<>();
     private Scanner scanner = new Scanner(System.in);
 
+
     public void meniuCarte() {
         while(true) {
             System.out.println("----------------------------------------");
@@ -60,6 +61,14 @@ public class ServiceCarte {
     private Carte citireCarte() {
         System.out.println("Id: ");
         int id = citireOP(Integer.MAX_VALUE);
+
+        //verificare daca id-ul este unic
+        for(Carte carte : carti) {
+            if(carte.getId() == id) {
+                System.out.println("Id-ul trebuie sa fie unic!");
+                return citireCarte();
+            }
+        }
         System.out.println("Titlu: ");
         String titlu = scanner.nextLine();
         System.out.println("Autor: ");
@@ -103,6 +112,10 @@ public class ServiceCarte {
             }
         }
         return p;
+    }
+
+    public List<Carte> getCarti() {
+        return carti;
     }
     private void adaugaCarte() {
         System.out.println("Adaugati o carte: ");
@@ -170,7 +183,7 @@ public class ServiceCarte {
     }
 
     private void stergeCarte() {
-        System.out.println("Sterge carte cu ID-ul: ");
+        System.out.println("Sterge cartea cu ID-ul: ");
         int id = citireOP(Integer.MAX_VALUE);
         boolean carteGasita = false;
         for(Carte carte : carti) {
